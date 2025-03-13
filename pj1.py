@@ -51,4 +51,5 @@ plt.legend()
 plt.show()
 
 plt.clf()  # 清除之前的图形
+# 嘿嘿
 
