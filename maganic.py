@@ -32,8 +32,8 @@ def calculate_Bx_Bz(R, I, x, z):
     E = ellipe(k_sq)
 
     # 计算 Bx 和 Bz
-    Bx = (mu0 * I * z) / (4 * np.pi * R * x * alpha) * ((D + R * x) * E - (D - R * x) * K)
-    Bz = (mu0 * I) / (4 * np.pi * alpha ** 3) * ((D + R ** 2 - x ** 2) * E - (D - R ** 2 - x ** 2) * K)
+    Bx = ((mu0 * I * z) / (4 * np.pi * R * x * alpha)) * ((D + R * x) * E - (D - R * x) * K)
+    Bz = ((mu0 * I) / (4 * np.pi * alpha ** 3)) * ((D + R ** 2 - x ** 2) * E - (D - R ** 2 - x ** 2) * K)
 
     return Bx, Bz
 
