@@ -5,7 +5,7 @@ from scipy.special import ellipk, ellipe
 # 常量定义
 mu0 = 4 * np.pi * 1e-7  # 真空磁导率 (T·m/A)
 R = 1.0  # 电流环半径 (m)
-I = 1.0  # 电流 (A)
+I = 0.001  # 电流 (A)
 
 
 def calculate_Bx_Bz(R, I, x, z):
@@ -39,8 +39,8 @@ def calculate_Bx_Bz(R, I, x, z):
 
 
 # 生成网格点
-x = np.linspace(-2 * R, 2 * R, 30)
-z = np.linspace(-2 * R, 2 * R, 30)
+x = np.linspace(-5 * R, 5 * R, 30)
+z = np.linspace(-5 * R, 5 * R, 30)
 X, Z = np.meshgrid(x, z)
 
 # 计算磁场分量
@@ -57,12 +57,12 @@ plt.streamplot(X, Z, Bx, Bz, color='red', linewidth=1, density=2)
 
 # 标记电流环位置
 theta = np.linspace(0, 2 * np.pi, 100)
-plt.plot(R * np.cos(theta), R * np.sin(theta)), 'k-', linewidth = 2)
+plt.plot(R * np.cos(theta), R * np.sin(theta), 'k-', linewidth=2)
 
 # 图像标注
-plt.xlabel('x (m)', fontsize=12)
-plt.ylabel('z (m)', fontsize=12)
-plt.title('Magnetic Field of a Circular Current Loop in xz-plane', fontsize=14)
-plt.grid(True)
-plt.axis('equal')
+plt.xlabel('x (m)', fontsize=12);
+plt.ylabel('z (m)', fontsize=12);
+plt.title('Magnetic Field of a Circular Current Loop in xz-plane', fontsize=14);
+plt.grid(True);
+plt.axis('equal');
 plt.show()
