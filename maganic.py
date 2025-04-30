@@ -39,8 +39,8 @@ def calculate_Bx_Bz(R, I, x, z):
 
 
 # 生成网格点
-x = np.linspace(-5 * R, 5 * R, 30)
-z = np.linspace(-5 * R, 5 * R, 30)
+x = np.linspace(-20 * R, 20 * R, 50)
+z = np.linspace(-20 * R, 20 * R, 50)
 X, Z = np.meshgrid(x, z)
 
 # 计算磁场分量

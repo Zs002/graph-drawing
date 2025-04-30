@@ -8,7 +8,7 @@ from mpl_toolkits.mplot3d import Axes3D
 x, y = meshgrid(arange(-2,2,0.04), arange(-2,2,0.04))
 #[X,Y,Theta]=np.mgrid[-0.5:0.5:0.05, -0.5:0.5:0.05,0:2*np.pi:np.pi/20]
 
-vx = 2 * x- y
+vx = 2 * x - y
 vy = y + x
 R=0.35
 X,Y,Theta=meshgrid(arange(-2,2,0.04), arange(-2,2,0.04),arange(0,2*np.pi,np.pi/20))
@@ -24,9 +24,9 @@ dBx=-C0*R*(R-Y*np.sin(Theta))/r3
 dBy=-C0*X*R*np.sin(Theta)/r3
 dBz=-C0*X*R*np.cos(Theta)/r3
 
-Bx=np.pi/40*np.trapz(dBx,axis=2)
-By=np.pi/40*np.trapz(dBy,axis=2)
-Bz=np.pi/40*np.trapz(dBz,axis=2)
+Bx=np.pi/40*np.trapezoid(dBx,axis=2)
+By=np.pi/40*np.trapezoid(dBy,axis=2)
+Bz=np.pi/40*np.trapezoid(dBz,axis=2)
 plt.figure(1)
 #streamplot(x, y, vy, vx)
 streamplot(x, y, Bx, By)
@@ -58,9 +58,9 @@ plt.title('Simplest default with labels')
 fig=plt.figure()
 ax1 = Axes3D(fig)
 
-Bx=np.pi/40*np.trapz(dBx,axis=2)
-By=np.pi/40*np.trapz(dBy,axis=2)
-Bz=np.pi/40*np.trapz(dBz,axis=2)
+Bx=np.pi/40*np.trapezoid(dBx,axis=2)
+By=np.pi/40*np.trapezoid(dBy,axis=2)
+Bz=np.pi/40*np.trapezoid(dBz,axis=2)
 r=R
 a,b=0.0,5
 theta = np.arange(0,4*np.pi,np.pi/20)
@@ -70,7 +70,7 @@ z1 = r * np.sin(theta)
 xd = 0
 yd = 0
 zd = 0
-ax1.scatter3D(xd,yd,zd, cmap='Blues')  #绘制散点图
+ax1.scatter3D(xd,yd,zd, c=zd, cmap='Blues')  #绘制散点图
 ax1.plot3D(x1,y1,z1,'gray')    #绘制空间曲线
 
 plt.show()
@@ -86,7 +86,7 @@ z1 = r * np.sin(theta)
 xd = 0
 yd = 0
 zd = 0
-ax1.scatter3D(xd,yd,zd, cmap='Blues')  #绘制散点图
+ax1.scatter3D(xd,yd,zd, c=zd, cmap='Blues')  #绘制散点图
 ax1.plot3D(x1,y1,z1,'--', linewidth=2,color='#B87333')    #绘制空间曲线
 r=R-0.5
 a,b=0.0,5
